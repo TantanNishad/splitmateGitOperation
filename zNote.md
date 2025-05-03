@@ -91,7 +91,7 @@
 
       notes:
 
-        >Grant Access Token : 30 days 
+        >   Access Token : 30 days 
             // setting token for access the git operation valid for only 30 days    
             
         >Create new repository
