@@ -92,13 +92,13 @@
       notes:
 
         >Grant Access Token : 30 days 
-            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
+            // setting token for access the git operation valid for only 30 days    
             
         >Create new repository
                 https://github.com/TantanNishad/new
 
         >url:
-                https://github.com/TantanNishad/splitmateGitOperation.git
+                https://github.com/TantanNishad/  splitmateGitOperation.git
 
         >Commond show:
                 …or create a new repository on the command line
