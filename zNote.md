@@ -298,7 +298,41 @@
       Terminal :
       git status
       Always good to double-check before restoring, since it can permanently remove changes.
+- ♻️ `004.` **Git reset**
+        ⚔️ git restore vs git reset — Simple Comparison
+                Action	git restore	git reset
+                ❌ Undo changes in working directory	✅ Yes	⚠️ Not directly
+                🧼 Unstage a file (remove from staging area)	✅ Yes (--staged)	✅ Yes
+                🕹 Change commit history	❌ No	✅ Yes (with flags like --soft, --mixed, --hard)
+                💣 Can delete commits	❌ No	✅ Yes (with --hard, etc.)
+                ✅ Safer for beginners	✅ Yes	⚠️ Be careful — can lose commits
 
+                🔄 When to Use Each
+                ✅ Use git restore when:
+                You want to undo file changes (like pressing “undo” in an editor)
+
+                You want to unstage files (like “remove from commit list”)
+
+                Examples:
+               Terminal :
+                git restore file.txt             # undo changes
+                git restore --staged file.txt    # unstage file
+                ⚠️ Use git reset when:
+                You want to move back in history
+
+                You want to unstage files
+
+                You’re okay with rewriting commits
+
+                Examples:
+               Terminal :
+                git reset HEAD~1             # move one commit back (keeps changes)
+                git reset --hard HEAD~1      # move back AND delete all changes
+                git reset file.txt           # unstage a file (similar to restore --staged)
+                👶 Beginner Tip:
+                Start with git restore — it's safer and perfect for undoing local file changes or unstaging.
+
+                Use git reset carefully, especially with --hard — it can permanently delete work if misused.
 ---
 
 ## 📂 Chapter 05: Git Branches
