@@ -164,7 +164,91 @@
 ## 📂 Chapter 04: Diff, Stash, and Restore
 
 - 🧾 `001.` **Git Diff**
+   ✅ Common git diff examples:
+          Command	         What it does
+          git diff	         Shows changes in your working directory (before staging with git add)
+          git diff --staged	 Shows changes that are staged (after git add, before git commit)
+          git diff main	Shows    changes between your current branch and the main branch
+          git diff HEAD	Shows    changes between the latest commit and your working directory
+
 - 📦 `002.` **Git Stash**
+        🧺 What is Git Stash?
+            Think of git stash like a temporary storage box for your changes.
+
+            🔹 You’re working on something, but suddenly need to switch branches or fix something else.
+            🔹 You’re not ready to commit, but don’t want to lose your work.
+            🔹 Use git stash to save your changes temporarily, clean your working directory, and come back to them later.
+
+            📦 Basic Example
+            Let’s say:
+
+            You changed a file: zcontent.md
+
+            But you suddenly need to switch branches
+
+            Git won’t let you switch if you have uncommitted changes.
+
+            ✅ Use:
+            Terminal :
+            git stash
+            This:
+
+            Saves your uncommitted changes
+
+            Reverts your working directory to the last commit (clean state)
+
+            Now you can safely switch branches or pull updates.
+
+            🔄 Bring Back the Changes
+            When you’re ready to go back to your work:
+
+            Terminal :
+            git stash pop
+            This:
+
+            Applies the latest stashed changes
+
+            Removes them from the stash list
+
+            Or:
+
+            Terminal :
+            git stash apply
+            This applies the changes but keeps them in the stash, just in case.
+
+            🧾 Multiple Stashes?
+            Yes! Git saves each stash with an index:
+
+            Terminal :
+            git stash list
+            Example output:
+
+            less
+            Copy
+            Edit
+            stash@{0}: WIP on main: update zcontent.md
+            stash@{1}: WIP on main: test login fix
+            To apply a specific one:
+
+            Terminal :
+            git stash apply stash@{1}
+            To delete a specific stash:
+
+            Terminal :
+            git stash drop stash@{1}
+            To clear all:
+
+            Terminal :
+            git stash clear
+            📝 Summary Table
+            Command	What it does
+            git stash	Save your changes temporarily
+            git stash list	        Show all stashed changes
+            git stash apply	        Re-apply the latest stash (but keep it)
+            git stash pop	        Re-apply and remove the latest stash
+            git stash drop stash@{n}	Delete a specific stash
+            git stash clear	        Delete all stashes
+
 - ♻️ `003.` **Git Restore**
 
 ---
