@@ -250,6 +250,54 @@
             git stash clear	        Delete all stashes
 
 - ♻️ `003.` **Git Restore**
+      🧯 What is git restore?
+      git restore is used to undo changes in your working directory.
+
+      Think of it as an “undo” button for files you haven't committed yet.
+
+      🧱 Why Use git restore?
+      When you:
+
+      Made changes to a file
+
+      But want to throw away those changes and go back to the last commit
+
+      🧪 Example Scenario:
+      You edited a file called index.html but don’t like the changes and want to undo them.
+
+      ✅ Undo Unstaged Changes
+      Terminal :
+      git restore index.html
+      🔹 This will reset index.html to how it was in the last commit.
+
+      ❗ You lose those changes — they’re not saved!
+
+      ✅ Undo All Unstaged Changes
+      Terminal :
+      git restore .
+      🔹 This restores all files back to the last commit.
+
+      ✅ Unstage a File (without losing changes)
+      If you've used git add, but haven't committed yet:
+
+      Terminal :
+      git restore --staged index.html
+      🔹 This unstages the file — takes it out of the staging area.
+
+      Your file stays as-is, but it won’t be included in the next commit.
+
+      🔄 Summary Table
+      Command	What It Does
+      git restore <file>	        Undo unstaged changes in the file
+      git restore .	                Undo unstaged changes in all files
+      git restore --staged <file>	Unstage a file (keep changes in working directory)
+
+      👀 Before You Restore...
+      Use this to check what's going to change:
+
+      Terminal :
+      git status
+      Always good to double-check before restoring, since it can permanently remove changes.
 
 ---
 
@@ -293,14 +341,12 @@
 - 🧽 `001.` **Git Squash**
 - ↩️ `002.` **Git Revert**
 - 🔄 `003.` **Git Reset**
-
 ---
 
 ## 📂 Chapter 10: Tag, Releases, and Commits
 
 - 🏷️ `001.` **Git Tag and GitHub Releases**
 - 🧭 `002.` **Git Checkout Tag/Commit/HEAD**
-
 ---
 
 ## 📂 Chapter 11: Git Clone
