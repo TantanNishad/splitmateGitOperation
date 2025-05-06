@@ -336,8 +336,184 @@
 ---
 
 ## 📂 Chapter 05: Git Branches
-
+   
 - 🌿 `001.` **Introduction to Git Branches**
+         1.   Introduction to Git Branches
+                Git is a powerful version control system that allows developers to work collaboratively on code. One of its core features is branching, which enables multiple lines of development to exist independently.
+
+                🔹 What is a Branch in Git?
+                A branch in Git represents an independent line of development. You can think of it as a pointer to a snapshot of your changes. The default branch in most repositories is called main or master.
+
+                Branches allow you to:
+
+                Work on new features without affecting the main codebase.
+
+                Fix bugs in isolation.
+
+                Experiment safely.
+
+                Collaborate without conflicts.
+
+                🔹 How Branching Works
+                When you create a new branch, Git creates a new pointer to the current commit.
+
+                As you make new commits on that branch, Git moves the pointer forward.
+
+                Switching between branches changes the files in your working directory to match that branch.
+
+                🔹 Common Git Branch Commands
+                Command	Description
+                git branch	Lists all local branches
+                git branch <branch-name>	Creates a new branch
+                git checkout <branch-name>	Switches to the specified branch
+                git checkout -b <branch-name>	Creates and switches to a new branch
+                git merge <branch-name>	Merges the specified branch into the current one
+                git branch -d <branch-name>	Deletes a branch
+
+                🔹 Example Workflow
+                bash
+                Copy
+                Edit
+                # Start on main branch
+                git checkout main
+
+                # Create and switch to a new feature branch
+                git checkout -b feature-login
+
+                # Make some changes and commit them
+                git add .
+                git commit -m "Add login feature"
+
+                # Switch back to main and merge changes
+                git checkout main
+                git merge feature-login
+                🔹 Visualizing Branches
+                Git tools like git log --oneline --graph --all or GUI clients (e.g., GitKraken, SourceTree, VSCode Git) can help visualize branches and merges.
+
+
+        2.  Practical
+                git branch
+                git branch feature-button 
+                git branch
+
+                git checkout feature-button
+                git branc
+                git status
+                git add .
+                git commit - "add Contact Button"
+
+                git  log --online
+                git push origin freature-button
+                git checkout feature-button
+
+                git merge feature button
+                git log --onine
+                git push orginal main
+                git branch -d feature-button
+
+                git add .
+                git push orgin main
+                git push orign --delete feature-button
+
+        You’re working on a website and want to add a "Contact Us" button. You’ll do this on a separate branch to avoid affecting the main branch until the feature is ready.
+
+        ✅ Step-by-Step with Correct Commands and Explanations
+
+        # 1. See existing branches
+        git branch
+        🔹 Shows all local branches. You'll see something like:
+
+
+        * main
+
+        # 2. Create a new branch for your feature
+        git branch feature-button
+        🔹 Creates a new branch called feature-button.
+
+
+        # 3. Check branches again
+        git branch
+        🔹 Now you'll see:
+
+
+        feature-button
+        * main
+
+        # 4. Switch to the new branch
+        git checkout feature-button
+        🔹 Now you're working on the feature-button branch.
+
+
+        # 5. (Typo: git branc → git branch)
+        git branch
+        🔹 Double-check you’re on feature-button.
+
+
+        # 6. Check the current file status
+        git status
+        🔹 Shows what files are changed, untracked, or staged.
+
+
+        # 7. Stage all changes
+        git add .
+
+        # 8. Commit your changes
+        git commit -m "Add Contact Button"
+        🔹 Note: Your original line had a small error: - "add Contact Button" → -m "Add Contact Button"
+
+
+        # 9. See the commit history in short format
+        git log --oneline
+        🔹 Shows commits like:
+
+        sql
+        Copy
+        Edit
+        e2a3f7c Add Contact Button
+        f1d2c3b Initial commit
+
+        # 10. Push your branch to GitHub
+        git push origin feature-button
+
+        # 11. (Already on the branch) — No need, but okay
+        git checkout feature-button
+
+        # 12. Merge your feature into main — FIRST switch to main
+        git checkout main
+        git merge feature-button
+        🔹 Combines the changes from feature-button into main.
+
+
+        # 13. View updated log
+        git log --oneline
+
+        # 14. Push the updated main branch to GitHub
+        git push origin main
+
+        # 15. Delete the local branch (after merge)
+        git branch -d feature-button
+
+        # 16. Stage and push any extra changes (optional)
+        git add .
+        git commit -m "Other updates"
+        git push origin main
+
+        # 17. Delete the remote branch from GitHub
+        git push origin --delete feature-button
+        🔹 Cleans up the branch from the remote.
+
+        ✅ Summary Flow:
+        Create and switch to a new branch.
+
+        Make changes and commit them.
+
+        Push the branch to GitHub.
+
+        Merge it into main once ready.
+
+        Clean up both local and remote branches.
+
+        
 - ✨ `002.` **Feature Branch**
 - 🔀 `003.` **Pull Changes and Merge Branch**
 - ⬇️ `004.` **Git Pull Command**

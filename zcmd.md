@@ -128,3 +128,28 @@ A practical guide covering essential Git commands for setup, daily use, collabor
 
 
     Notifications
+
+
+--branch Operation 
+        git branch
+        git branch feature-button 
+        git branch
+
+        git checkout feature-button
+        git branc
+        git status
+        git add .
+        git commit - "add Contact Button"
+
+        git  log --online
+        git push origin freature-button
+        git checkout feature-button
+
+        git merge feature button
+        git log --onine
+        git push orginal main
+        git branch -d feature-button
+
+        git add .
+        git push orgin main
+        git push orign --delete feature-button
